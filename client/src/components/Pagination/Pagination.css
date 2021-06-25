@@ -1,0 +1,10 @@
+.page-link {
+    border: 2px solid lightblue !important;
+    background-color:white !important;
+    margin-bottom: 20px;
+    color: black !important;
+}
+.page-link:hover {
+    background-color: lightgreen !important;
+    color:white !important;
+}
