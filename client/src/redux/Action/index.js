@@ -66,7 +66,7 @@ export function getDiets(){
         })
     }
 }
-export function setTitle(query){
+/* export function setTitle(query){
     return function(dispatch){
         dispatch({
             type:SetTitle,
@@ -75,8 +75,8 @@ export function setTitle(query){
         })
         //console.log("probando query",query)
     }
-}
-export function setDiet(diet) {
+} */
+/* export function setDiet(diet) {
     return function(dispatch){
         dispatch({
             type: SetDiet,
@@ -84,32 +84,32 @@ export function setDiet(diet) {
         })
         console.log("probando action diet", diet)
     }
-}
-export function setOrderWay(orderWay){
+} */
+/* export function setOrderWay(orderWay){
     return function(dispatch){
         dispatch({
             type: SetOrderWay,
             payload: orderWay
         })
     }
-}
-export function setOrderBy(orderBy){
+} */
+/* export function setOrderBy(orderBy){
     return function(dispatch){
         dispatch({
             type: SetOrderBy,
             payload: orderBy
         })
     }
-}
+} */
 
 
-export function emptyRecipes(){
+/* export function emptyRecipes(){
     return function(dispatch) {
         dispatch({
             type: EmptyRecipes
         })
     }
-}
+} */
 
 
 
