@@ -152,13 +152,13 @@ const getRecipeByID= async (req, res,next) =>{
             const response = await axios.get(`${RECIPE_ID}/${id}/information?apiKey=${API_KEY8}`)
     
             const newRecetaApi= {
-                imagen: response.data.image,
+                image: response.data.image,
                 title: response.data.title,
-                dish_summary: response.data.summary,
+                summary: response.data.summary,
                 score: response.data.spoonacularScore,
                 health_Score: response.data.healthScore,
                 dish_type: response.data.dishTypes,
-                diets_type: response.data.diets                   
+                diets: response.data.diets                   
               
             }
     

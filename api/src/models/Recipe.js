@@ -14,10 +14,13 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    dish_summary: {
+    summary: {
       type: DataTypes.TEXT,
       allowNull: false
     },
+    step_by_step: {
+      type: DataTypes.TEXT
+    },  
     score: {
       type: DataTypes.INTEGER,
       
@@ -25,10 +28,8 @@ module.exports = (sequelize) => {
     health_Score: {
       type: DataTypes.INTEGER,
 
-    },    
-    step_by_step: {
-      type: DataTypes.TEXT
-    }    
+    }   
+     
   },{
     sequelize,
     modelName: "recipe",

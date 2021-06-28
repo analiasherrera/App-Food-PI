@@ -6,19 +6,19 @@ const addRecipe = async (req,res) =>{
 
  try {
     const id = uuidv4();    
-    const {title, dish_summary, score, health_Score, step_by_step, typedietId}= req.body
+    const {title, summary, score, health_Score, step_by_step, typedietId}= req.body
 
     //const newRecipe = {...req.body, id}
     
      const createRecipe = await Recipe.create({
          
          title,
-         dish_summary,
+         summary,
          score,
          health_Score,
          step_by_step
      },{
-        fields: ['title', 'dish_summary', 'score', 'health_Score', 'step_by_step']
+        fields: ['title', 'summary', 'score', 'health_Score', 'step_by_step']
      });     
 
       if(createRecipe){
