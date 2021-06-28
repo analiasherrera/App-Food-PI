@@ -11,9 +11,9 @@ import {addRecipe} from '../../redux/Action/index'
 function AddRecipe(props) {
     //const dispatch = useDispatch();
     const [input, setInput]= useState({
-        name:"",
+        title:"",
         summary:"",
-        stepByStep:"",
+        step_by_step:"",
        
     })
 
@@ -29,7 +29,7 @@ function AddRecipe(props) {
     
     const [rating, setRating]= useState({
         score:null,
-        healthy_score:null,
+        health_Score:null,
 
     })
 
@@ -90,7 +90,7 @@ function AddRecipe(props) {
                     <label className="p-4 control-label h6 mt-4 ">Recipe's name: </label>
                     <input 
                      type="text"
-                     name= "name"
+                     name= "title"
                      onChange= {(e)=>handleChange(e)}         
                      className="p-1 input-sm mt-5 form-horizontal border-2 border-secondary"    
                      placeholder="recipe name required" >
@@ -115,7 +115,7 @@ function AddRecipe(props) {
                     <textarea 
                    // type="textarea"
                     onChange={(e)=>handleChange(e)}
-                    name="stepByStep"
+                    name="step_by_step"
                     className="p-5 w-50 form-horizontal border-2 border-secondary mb-3" 
                     id="validationTextarea" 
                     placeholder="enter step by step" >                        
@@ -137,7 +137,7 @@ function AddRecipe(props) {
                     type="number"
                     max="100"
                     min="5"
-                    name="healthy_score"
+                    name="health_Score"
                     onChange={(e)=>handleRating(e)} 
                     className="form-horizontal col-sm-2 p-1 mt-4 border-2 border-secondary"/>                    
                 </div>
@@ -146,85 +146,85 @@ function AddRecipe(props) {
                  <div className="form-group">
                      <div className="form-group d-flex justify-content-center ">
                 <div className="form-chek mb-3">                                     
-                    <label className="form-check-label h6 p-2 mx-2" for="validationFormCheck1">Gluten Free</label>
+                    <label className="form-check-label h6 p-2 mx-2" for="validationFormCheck1" id="1">Gluten Free</label>
                     <input 
                     type="checkbox"
                     name="glutenFree" 
                     onChange={(e)=>handleCheckbox(e)}
                     className="form-check-input p-3 border-2 border-secondary" 
-                    id="validationFormCheck1"
+                    id="1"
                     />                    
                 </div>
 
                 <div className="form-chek mb-3 mx-5">                    
-                    <label className="form-check-label h6 p-2 mx-2" for="validationFormCheck1">Vegetarian</label>
+                    <label className="form-check-label h6 p-2 mx-2" for="validationFormCheck1"id="2">Vegetarian</label>
                     <input 
                     type="checkbox" 
                     name="vegetarian"
                     onChange={(e)=>handleCheckbox(e)}
                     className="form-check-input p-3 border-2 border-secondary" 
-                    id="validationFormCheck1"
+                    id="2"
                     />                    
                  </div>
                  </div>
 
                  <div className="form-group d-flex justify-content-center">
                 <div className="form-chek mb-3">                    
-                    <label className="form-check-label h6 p-2 mx-2" for="validationFormCheck1">Lacto Ovo Vegetarian</label>
+                    <label className="form-check-label h6 p-2 mx-2" for="validationFormCheck1" id="3">Lacto Ovo Vegetarian</label>
                     <input 
                     type="checkbox" 
                     name="lactoOvoVegetarian"
                     onChange={(e)=>handleCheckbox(e)}
                     className="form-check-input p-3 border-2 border-secondary" 
-                    id="validationFormCheck1"
+                    id="3"
                     />                    
                 </div>
 
                 <div className="form-chek mb-3 mx-5">                    
-                    <label className="form-check-label h6 p-2 mx-2" for="validationFormCheck1">Vegan</label>
+                    <label className="form-check-label h6 p-2 mx-2" for="validationFormCheck1" id="4">Vegan</label>
                     <input 
                     type="checkbox" 
                     name="vegan"
                     onChange={(e)=>handleCheckbox(e)}
                     className="form-check-input p-3 border-2 border-secondary" 
-                    id="validationFormCheck1"
+                    id="4"
                     />                    
                 </div>
                  </div>
 
                  <div  className="form-group d-flex justify-content-center">
                 <div className="form-chek mb-3">                    
-                    <label className="form-check-label h6 p-2 mx-2" for="validationFormCheck1">Pescetarian</label>
+                    <label className="form-check-label h6 p-2 mx-2" for="5">Pescetarian</label>
                     <input 
                     type="checkbox" 
                     name="pescetarian"
                     onChange={(e)=>handleCheckbox(e)}
                     className="form-check-input p-3 border-2 border-secondary" 
-                    id="validationFormCheck1"
+                    id="5"
                     />                    
                 </div>
 
                 <div className="form-chek mb-3 mx-5">                    
-                    <label className="form-check-label h6 p-2 mx-2" for="validationFormCheck1">Paleolithic</label>
+                    <label className="form-check-label h6 p-2 mx-2" for="6">Paleolithic</label>
                     <input 
                     type="checkbox" 
                     name="paleolithic"
                     onChange={(e)=>handleCheckbox(e)}
                     className="form-check-input p-3 border-2 border-secondary" 
-                    id="validationFormCheck1"
+                    id="6"
                     />                    
                 </div>
                  </div>
 
                  <div  className="form-group d-flex justify-content-center">
                 <div className="form-chek mb-3">                    
-                    <label className="form-check-label h6 p-2 mx-2" for="validationFormCheck1">Primal</label>
+                    <label className="form-check-label h6 p-2 mx-2" for="7">Primal</label>
                     <input 
                     type="checkbox" 
                     name="primal"
                     onChange={(e)=>handleCheckbox(e)}
                     className="form-check-input p-3 border-2 border-secondary" 
-                    id="validationFormCheck1"
+                    id="7"
                     />                    
                 </div>                
                  </div>
