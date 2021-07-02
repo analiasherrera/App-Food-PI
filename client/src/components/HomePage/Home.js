@@ -18,7 +18,7 @@ function Home() {
     //-----Pagination---  
     const[loading, setLoading] = useState(false);
     const[currentPage, setCurrentPage] = useState(1);
-    const[recipePerPage] = useState(3);
+    const[recipePerPage] = useState(9);
     
     const dispatch= useDispatch()
 

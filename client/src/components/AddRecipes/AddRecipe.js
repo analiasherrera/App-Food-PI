@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import '../AddRecipes/AddRecipe.module.css';
 import NavBar from '../NavBar/Navbar';
 import foto1 from '../../img/img1.jpg'
 import Footer from '../Footer/footer';
-import {addRecipe} from '../../redux/Action/index'
+import {addRecipe, getDiets} from '../../redux/Action/index'
 
 
 
 function AddRecipe(props) {
-    //const dispatch = useDispatch();
+   const dispatch = useDispatch();
     const [input, setInput]= useState({
         title:"",
         summary:"",
@@ -17,15 +18,16 @@ function AddRecipe(props) {
        
     })
 
-    const [checkboxInput, setCheboxInput] = useState({
-        glutenFree:false,
+    const [checkboxInput, setCheboxInput] = useState([])
+      /*   glutenFree:false,
         vegetarian:false,
         lactoOvoVegetarian:false,
         vegan:false,
         pescetarian:false,
         paleolithic:false,
-        primal:false,
-    })
+        primal:false, */
+
+    
     
     const [rating, setRating]= useState({
         score:null,
@@ -48,10 +50,10 @@ function AddRecipe(props) {
     }
 
     const handleCheckbox = (e) =>{
-        setCheboxInput({
-            ...checkboxInput,
-            [e.target.name]: e.target.checked
-        })
+        setCheboxInput(
+           /*  ...checkboxInput, */
+          checkboxInput.concat(Number(e.target.id)) 
+        )
     }
 
     const handleRating = (e) => {
@@ -67,18 +69,22 @@ function AddRecipe(props) {
         if(input.name === '' || input.summary === '') {
             setOutCome({text:'Required data missing'})
         } else {
-            const newRecipe= {...input, ...rating, Categories:[]};
-            Object.values(checkboxInput).map((c,index) =>{if(c){newRecipe.Categories.push(index+1)}})
+            const newRecipe= {...input, ...rating, typedietId:checkboxInput};
+            /* Object.values(checkboxInput).map((c,index) =>{if(c){newRecipe.typedietId.push(index+1)}}) */
             console.log(newRecipe)
             props.postRecipe(newRecipe);
             setOutCome({text:"Recipe Uploaded Succesfuly!"})
         }
     }
      ////////////////////////////////////////////////////////////////////
+
+     useEffect( ()=>{
+         dispatch(getDiets());
+     },[])
   
       
-    /* const postRecipe= useSelector(store => store.recipe) */
-   
+     const diets= useSelector(store => store.diets) 
+    
 
     return (
         <div className="">
@@ -230,7 +236,7 @@ function AddRecipe(props) {
                  </div>
                 </div>
 
-                <h5 className="text-danger text-center">{outCome.text}</h5>
+                <h5 className="text-success text-center">{outCome.text}</h5>
                 <div className="mb-3 d-flex justify-content-center">
               <button 
               className=" p-3 mt-3 w-25 btn btn-lg btn-outline-success fw-bold border-3 h1"
