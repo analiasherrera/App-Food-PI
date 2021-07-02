@@ -14,7 +14,7 @@ const getRecipeByName= async (req,res) =>{
         /* console.log("Probando page=", page) */
   
 
-let url = `${RECIPE_URL}?number=12&addRecipeInformation=true&apiKey=${API_KEY8}`;
+let url = `${RECIPE_URL}?number=100&addRecipeInformation=true&apiKey=${API_KEY8}`;
 
  if(diet) {
      url= url + `&diet=${diet}`;
@@ -76,13 +76,13 @@ if(query){
              return {
                  id: c.id,
                  title: c.title,                 
-                 image: "https://i.pinimg.com/originals/74/f0/97/74f0970a1abff5c07a4488dff715beea.jpg",
+                 image: c.image,
                  diets: c.typediets.map((a)=> a.name),
                  score: c.score
                  
              }
          })
-         console.log("probando los datos DB", dbRecipeFilter)
+        // console.log("probando los datos DB", dbRecipeFilter)
 
          let allRecipesTogether = dbRecipeFilter.concat(apiRecipefilter);
          //console.log('Probando allRecipes final',allRecipesTogether)         
@@ -167,7 +167,9 @@ const getRecipeByID= async (req, res,next) =>{
         //cuando el id=uuid(BD)
     
         const recetaDB= await Recipe.findOne({
-            where:{ id: id }
+            
+            where:{ id: id },
+            include:{model:Typediet}
         })
     
         return res.status(200).json(recetaDB)

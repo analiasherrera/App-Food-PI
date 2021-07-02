@@ -6,19 +6,25 @@ const addRecipe = async (req,res) =>{
 
  try {
     const id = uuidv4();    
-    const {title, summary, score, health_Score, step_by_step, typedietId}= req.body
+    let {image, title, summary, score, health_Score, step_by_step, typedietId}= req.body
+     // console.log(image)
+     // console.log(typedietId);
+      console.log(req.body)
+    if(!image) {
+        image = "https://i.pinimg.com/originals/74/f0/97/74f0970a1abff5c07a4488dff715beea.jpg";
 
+    } 
     //const newRecipe = {...req.body, id}
-    
+    console.log("2", image)
      const createRecipe = await Recipe.create({
-         
+         image,
          title,
          summary,
          score,
          health_Score,
          step_by_step
      },{
-        fields: ['title', 'summary', 'score', 'health_Score', 'step_by_step']
+        fields: ['image', 'title', 'summary', 'score', 'health_Score', 'step_by_step']
      });     
 
       if(createRecipe){
