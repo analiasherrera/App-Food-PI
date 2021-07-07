@@ -14,7 +14,7 @@ const getRecipeByName= async (req,res) =>{
         /* console.log("Probando page=", page) */
   
 
-let url = `${RECIPE_URL}?number=100&addRecipeInformation=true&apiKey=${API_KEY8}`;
+let url = `${RECIPE_URL}?number=54&addRecipeInformation=true&apiKey=${API_KEY9}`;
 
  if(diet) {
      url= url + `&diet=${diet}`;
@@ -149,7 +149,7 @@ const getRecipeByID= async (req, res,next) =>{
         //cuando el id es de la api    
     
         if(id.toString().length < 10) {
-            const response = await axios.get(`${RECIPE_ID}/${id}/information?apiKey=${API_KEY8}`)
+            const response = await axios.get(`${RECIPE_ID}/${id}/information?apiKey=${API_KEY2}`)
     
             const newRecetaApi= {
                 image: response.data.image,
@@ -158,7 +158,7 @@ const getRecipeByID= async (req, res,next) =>{
                 score: response.data.spoonacularScore,
                 health_Score: response.data.healthScore,
                 dish_type: response.data.dishTypes,
-                diets: response.data.diets                   
+                                  
               
             }
     
