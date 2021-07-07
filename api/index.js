@@ -31,7 +31,7 @@ const { conn, Typediet } = require('./src/db.js');
     server.listen(process.env.PORT, () => {
       console.log("%s listening at 3000"); // eslint-disable-line no-console
     });
-  });
+  
 
   Typediet.bulkCreate([
     {name: 'gluten free'},   
