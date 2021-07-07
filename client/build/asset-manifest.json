@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d4872cba.chunk.css",
+    "main.js": "/static/js/main.cdae413d.chunk.js",
+    "main.js.map": "/static/js/main.cdae413d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.03887cff.js",
+    "runtime-main.js.map": "/static/js/runtime-main.03887cff.js.map",
+    "static/css/2.7827dc58.chunk.css": "/static/css/2.7827dc58.chunk.css",
+    "static/js/2.908608eb.chunk.js": "/static/js/2.908608eb.chunk.js",
+    "static/js/2.908608eb.chunk.js.map": "/static/js/2.908608eb.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.7827dc58.chunk.css.map": "/static/css/2.7827dc58.chunk.css.map",
+    "static/css/main.d4872cba.chunk.css.map": "/static/css/main.d4872cba.chunk.css.map",
+    "static/js/2.908608eb.chunk.js.LICENSE.txt": "/static/js/2.908608eb.chunk.js.LICENSE.txt",
+    "static/media/comida1.0ae1fe14.jpg": "/static/media/comida1.0ae1fe14.jpg",
+    "static/media/img1.6b61f0bb.jpg": "/static/media/img1.6b61f0bb.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.03887cff.js",
+    "static/css/2.7827dc58.chunk.css",
+    "static/js/2.908608eb.chunk.js",
+    "static/css/main.d4872cba.chunk.css",
+    "static/js/main.cdae413d.chunk.js"
+  ]
+}

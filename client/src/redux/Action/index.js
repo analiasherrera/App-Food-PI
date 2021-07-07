@@ -15,7 +15,7 @@ export const EmptyRecipes= 'EmptyRecipes';
 
 export function getRecipes(query="", diet="", orderBy="", orderWay=""){
     return function (dispatch){
-        axios.get(`http://localhost:3001/recipes?query=${query}&diet=${diet}&orderBy=${orderBy}&orderWay=${orderWay}`)
+        axios.get(`/recipes?query=${query}&diet=${diet}&orderBy=${orderBy}&orderWay=${orderWay}`)
          .then((result)=>{
             // console.log("Probando si llega a las actions",result)
              dispatch({
@@ -28,7 +28,7 @@ export function getRecipes(query="", diet="", orderBy="", orderWay=""){
 
 export function getRecipeById(id) {
     return function(dispatch){
-        axios.get(`http://localhost:3001/recipes/${id}`)
+        axios.get(`/recipes/${id}`)
          .then((result) =>{
              dispatch({ 
                  type: GetRecipeID,
@@ -40,14 +40,14 @@ export function getRecipeById(id) {
 //Post
 export function addRecipe(recipe) {
     return function(dispatch) {
-        axios.post(`http://localhost:3001/recipes/`,{...recipe})        
+        axios.post(`/recipes/`,{...recipe})        
 
     }
 }
 
 //Otro ejemplo de POST
 /* export const addrecipe= (recipe)=>(dispatch)=>{
-    axios.post(`http://localhost:3001/recipes2/`)
+    axios.post(`/recipes2/`)
      .then(dispatch({
          type: AddRecipe,
          payload:[...recipe] 
@@ -56,7 +56,7 @@ export function addRecipe(recipe) {
     
 export function getDiets(){
     return function(dispatch) {
-        axios.get(`http://localhost:3001/types`)
+        axios.get(`/types`)
         .then((result) =>{
             dispatch({
                 type: GetAllDiets,
@@ -66,50 +66,7 @@ export function getDiets(){
         })
     }
 }
-/* export function setTitle(query){
-    return function(dispatch){
-        dispatch({
-            type:SetTitle,
-            payload:query
-            
-        })
-        //console.log("probando query",query)
-    }
-} */
-/* export function setDiet(diet) {
-    return function(dispatch){
-        dispatch({
-            type: SetDiet,
-            payload: diet
-        })
-        console.log("probando action diet", diet)
-    }
-} */
-/* export function setOrderWay(orderWay){
-    return function(dispatch){
-        dispatch({
-            type: SetOrderWay,
-            payload: orderWay
-        })
-    }
-} */
-/* export function setOrderBy(orderBy){
-    return function(dispatch){
-        dispatch({
-            type: SetOrderBy,
-            payload: orderBy
-        })
-    }
-} */
 
-
-/* export function emptyRecipes(){
-    return function(dispatch) {
-        dispatch({
-            type: EmptyRecipes
-        })
-    }
-} */
 
 
 
